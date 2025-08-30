@@ -1,18 +1,22 @@
-# Game.py
+from tkinter import Menu
 
-from .Level import Level
-from .EntityFactory import EntityFactory
-from .placeholders import Surface
+import pygame
 
 
 class Game:
-    def __init__(self, window: Surface):
-        self.window = window
-        self.levels = []
-        self.levels.append(Level(window, "Nível 1", EntityFactory()))
-        self.levels.append(Level(window, "Nível 2", EntityFactory()))
+    def __init__(self):
+        self.window = None
+        pygame.init()
+        window = pygame.display.set_mode(size=(600, 480))
 
-    def run(self) -> None:
-        print("Iniciando o jogo.")
-        for level in self.levels:
-            level.run()
+    def run(self):
+        while True:
+            menu = Menu(self.window)
+            menu.run()
+            pass
+
+            # Check for all events
+            # for event in pygame.event.get():
+            #   if event.type == pygame.QUIT:
+            #      pygame.quit()  # Close Window
+             # quit()  # end pygame
